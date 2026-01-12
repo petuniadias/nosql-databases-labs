@@ -1,0 +1,15 @@
+export const FLIGHT_STATUS = {
+  SCHEDULED: 1,
+  CANCELLED: 2,
+  DELAYED: 3,
+  IN_PROGRESS: 4,
+  COMPLETED: 5,
+};
+
+export const FLIGHT_STATUS_NAMES = {
+  [FLIGHT_STATUS.SCHEDULED]: "Scheduled",
+  [FLIGHT_STATUS.CANCELLED]: "Cancelled",
+  [FLIGHT_STATUS.DELAYED]: "Delayed",
+  [FLIGHT_STATUS.IN_PROGRESS]: "In Progress",
+  [FLIGHT_STATUS.COMPLETED]: "Completed",
+};
