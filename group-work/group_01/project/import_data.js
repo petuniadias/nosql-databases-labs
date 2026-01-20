@@ -9,9 +9,7 @@ const fs = require("fs").promises;
 const path = require("path");
 
 const DATABASE_NAME = "group_01_flight_management_system_final";
-const MONGODB_URI =
-  process.env.MONGODB_URI ||
-  "mongodb://admin:admin123@localhost:27017/?authSource=admin";
+const MONGODB_URI = "mongodb://admin:admin123@localhost:27017/?authSource=admin";
 
 // Collection names and their corresponding JSON files
 const COLLECTIONS = [
