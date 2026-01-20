@@ -1,6 +1,7 @@
 const { MongoClient } = require("mongodb");
 
 const { registerUser } = require("./queries/01_register_user.mongosh.js");
+const { createFlightReservation } = require("./queries/02_create_flight_reservation.mongosh.js");
 const { airlinesOperatingAtAirport } = require("./queries/10_airlines_operating_at_airport.mongosh.js");
 const { findFlightsByRouteAndDate } = require("./queries/11_find_flights_by_route_and_date.mongosh.js");
 
@@ -22,6 +23,10 @@ async function runQueries() {
     console.log("\n01. Register a new user:");
     console.log("-".repeat(50));
     await registerUser(db);
+
+    console.log("\n02. Create a new flight reservation:");
+    console.log("-".repeat(50));
+    await createFlightReservation(db);
 
     console.log("\n10. Airlines operating at airport:");
     console.log("-".repeat(50));
