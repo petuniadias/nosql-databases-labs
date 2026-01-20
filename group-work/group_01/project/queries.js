@@ -1,8 +1,8 @@
 const { MongoClient } = require("mongodb");
 
 const { registerUser } = require("./queries/01_register_user.mongosh.js");
-const { lastCallFlightsStatus } = require("./queries/09_last_call_flights_status.mongosh.js");
 const { airlinesOperatingAtAirport } = require("./queries/10_airlines_operating_at_airport.mongosh.js");
+const { findFlightsByRouteAndDate } = require("./queries/11_find_flights_by_route_and_date.mongosh.js");
 
 const MONGODB_URI = "mongodb://admin:admin123@localhost:27017/?authSource=admin";
 const dbName = "group_01_flight_management_system_final";
@@ -26,6 +26,10 @@ async function runQueries() {
     console.log("\n10. Airlines operating at airport:");
     console.log("-".repeat(50));
     await airlinesOperatingAtAirport(db);
+
+    console.log("\n11. Find flights by route and date:");
+    console.log("-".repeat(50));
+    await findFlightsByRouteAndDate(db);
 
     // ========================================
     // AGGREGATION COUNTS
