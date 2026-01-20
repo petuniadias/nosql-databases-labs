@@ -3,6 +3,7 @@ const { MongoClient } = require("mongodb");
 const { registerUser } = require("./queries/01_register_user.mongosh.js");
 const { createFlightReservation } = require("./queries/02_create_flight_reservation.mongosh.js");
 const { findUserReservations } = require("./queries/03_find_user_reservations.mongosh.js");
+const { cancelAllAirportFlights } = require("./queries/04_cancel_all_airport_flights.mongosh.js");
 const { airlinesOperatingAtAirport } = require("./queries/10_airlines_operating_at_airport.mongosh.js");
 const { findFlightsByRouteAndDate } = require("./queries/11_find_flights_by_route_and_date.mongosh.js");
 
@@ -32,6 +33,10 @@ async function runQueries() {
     console.log("\n03. Find user reservations:");
     console.log("-".repeat(50));
     await findUserReservations(db);
+
+    console.log("\n04. Cancel all flights at airport:");
+    console.log("-".repeat(50));
+    await cancelAllAirportFlights(db);
 
     console.log("\n10. Airlines operating at airport:");
     console.log("-".repeat(50));
