@@ -23,6 +23,10 @@ async function runQueries() {
     console.log("-".repeat(50));
     await registerUser(db);
 
+    console.log("\n10. Airlines operating at airport:");
+    console.log("-".repeat(50));
+    await airlinesOperatingAtAirport(db);
+
     // ========================================
     // AGGREGATION COUNTS
     // ========================================
