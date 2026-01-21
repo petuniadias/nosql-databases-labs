@@ -1,3 +1,8 @@
+/**
+ * List airports in city
+ * @param {Object} db - MongoDB database instance 
+ * @param {string} municipality 
+ */
 async function listAirportsInCity(
     db,
     municipality = "Porto"
@@ -14,7 +19,7 @@ async function listAirportsInCity(
 
         console.log(`List airports in ${municipality}:`, result);
     } catch (error) {
-        console.error("Error listing airports in city", error);
+        console.error(`Error listing airports in ${municipality}`, error);
         throw error;
     }
 }
